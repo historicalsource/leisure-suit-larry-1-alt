@@ -1,0 +1,7 @@
+nvols(2)
+ndisks(2)
+
+ondisk(1,0)
+ondisk(1,1)
+ondisk(2,0)
+ondisk(2,2)

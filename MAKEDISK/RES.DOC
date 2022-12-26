@@ -1,0 +1,144 @@
+							RES
+			  The AGI volume/disk resolution program
+
+Res.exe is a program written in Borland's Turbo Prolog which can be used
+to help resolve the distribution of objects between the various disks
+of an adventure game.
+
+Before running RES, the following files should be available in your DOS
+search path
+
+	res.bat
+	r.exe
+	finduse.exe
+	mkvol.exe
+	size.bat
+	use.bat
+
+The macro 'size.cm' should be in your Brief directory, and the file
+'prolog.err' should be in your makedisk directory (just in case RES
+bombs and wants to display an error message).
+
+The RES program and its supporting files assume the canonical sub-directory
+structure for adventure games:
+
+				main game directory
+					    |
+	 -----------------------------------------------------
+	 |		 |		 |		 |		 |		   |
+	src		lgc		view		pic		snd		makedisk
+
+
+
+Create the three auxiliary files in the following manner (the files
+may contain blank lines, and comments are preceeded with semi-colons):
+
+disks
+	This file tells RES how many disks and volumes you are going to make
+	and which volumes are on which disks.  There should be one line of
+	the form
+		nvols(v)		;v = maximum volume number
+	and one of the form
+		ndisks(d)		;d = number of disks
+	
+	The remainder of the file consists of as many lines as necessary
+	to represent the disk/volume relationships.  These lines are
+	of the form
+		ondisk(d,v)	;d = disk number, v = volume number
+
+uses
+	This file tells RES the objects which each room requires.  You
+	create the file by running the 'use.bat' batch file.
+
+sizes
+	This file tells RES the sizes of the various objects in the game.
+	Create it by running the 'size.bat' batch file, then loading
+	the resulting file named 'sizes' into Brief, running the 'size'
+	macro, and saving the file.  (Note that this requires a relatively
+	new version of 'ls'.)
+
+
+
+The next thing to do is create preliminary driver files for mkvol.  These
+files are named 'VOLn.DRV' where 'n' is the volume number.  The files
+(which may contain blank lines and comments preceed with a semi-colon)
+consist of the indications of which files to be included in the volume.
+Room number XX is represented by
+			rXX
+picture Z by
+			pZ
+view YYY by
+			vYYY
+and sound N by
+			sN
+[Sorry about the change from the former volume files -- RES is a very memory
+hungry program, and the smaller the representation of the objects, the better
+(and faster) it is.]
+
+
+RES uses the Turbo Prolog editor internally, and reads characters for
+this through DOS calls.  Thus, if you have the ANSI.SYS device driver
+installed and have re-assigned some keys on the keyboard, you should
+undefine these keys before running RES, then redefine them on exit.  This
+is done in the res.bat file by TYPEing the file 'undefn' to undefine
+the keys, then running RES ('r'), and finally TYPEing 'keydefns' to
+redefine the keys after leaving RES.  Delete these lines if you haven't
+done any key definitions in DOS.  Otherwise, create both 'undefn' and
+'keydefns'.
+
+
+
+Now you're ready to run RES.  Make sure that you don't have any incarnations
+of Brief tying up memory, as RES needs all it can get.  Then type 'res'.
+You'll see the three RES windows appear, then a window showing the
+initialization taking place.  This will take a while -- be patient, you're
+machine isn't dead (see the hard-disk light blinking every now and then?).
+If RES is unable to initialize itself, an error message will be displayed.
+Once initialization has completed, the RES menu will be displayed.
+Menu selections are made by pressing the first letter of the item desired.
+The selections are:
+
+Resolve
+	This prompts for a disk number, then tries to 'resolve' the given
+	disk.  Any files needed by logics on the given disk, but not present
+	on the disk will be displayed in the 'Missing' window, along with
+	any duplication of objects between volumes.  This may take a while --
+	if you've got a turbo machine, make sure it is in turbo mode.
+
+Driver
+	This prompts for a volume number, then loads the corresponding volume
+	driver into the 'Driver' window and allows you to edit it.  The editing
+	keys are those of Turbo Prolog (similar to WordStar) -- a cheat sheet
+	is available.  To return to the menu, type ESC.  You will be prompted
+	for a file name to save under.  Type in a new name if you wish, or press
+	ENTER to save under the current name or	ESC to not save it.
+
+Missing
+	This prompts for a volume number (which you must have, at some time,
+	run Resolve on) and allows you to edit the 'missing' file for that
+	volume in the 'Missing' window.
+
+Sizes
+	This computes the space occupied by the volumes on each of the disks
+	and displays the results in the 'Disk Sizes' window.
+
+Edit
+	This prompts for a file name and allows you to edit that file
+	in a special window.  To expand that window to full screen, press
+	Ctrl-F10.  Press ESC when you're done and deal with the filename
+	as in 'Driver' above.
+
+OS
+	Operating System -- exit to a secondary command processer (if there
+	is enough memory).
+
+Quit
+	Quit.
+
+
+
+After running RES, you will also have several files hanging around in your
+makedisk directory which may prove useful -- the files MISSING.n contain
+the information from the 'Missing' window for each of the the disks, and
+the file DISKSIZE contains the disk sizes.  The DISKLIST.n files aren't
+all that useful -- they are just lists of what is on each disk.

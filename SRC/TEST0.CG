@@ -1,0 +1,160 @@
+[logics for testing interpreter room 0
+
+%include "sysdefs.h"
+
+
+
+%define	cHelp				1
+%define	cAutoViewLoad			2
+%define	cShowEgo				3
+%define	cShowPriority			4
+%define	cVersion				5
+%define	cInitJoy				6
+%define	cToggleMonitor			7
+%define	cQuit				8
+%define	cAbout				9
+%define	cHelp1				10
+%define	cHelp2				11
+%define	cShowObj				12
+%define	cRepositionEgo			13
+%define	cSetEgoP				14
+%define	cReleaseEgoP			15
+%define	cLoopCount			16
+%define	cBlockToggle			17
+%define	cSpeedChange			18
+%define	cLoadPic				19
+%define	cLoadView				20
+%define	cKeepCycling			21
+%define	cNoCycling			22
+%define	cSetLoop				23
+%define	cSetCell				24
+%define	cFloatEgo				25
+%define	cAddToPic				26
+%define	cOverlayPic			27
+%define	cCelCount				28
+%define	cCycleChange			29
+%define	cStepSize				30
+%define	cStepTime				31
+%define	cMenu				32
+%define	cAboutAl				33
+
+
+
+%message	10		"Testing"
+%message	11	"About Testing"
+%message	12	"About Al Lowe"
+%message	13	"  Fn Key Help"
+%message	14	"Ctrl Key Help"
+%message	15	" Alt Key Help"
+
+%message	20		"File"
+%message	21	"Load View      <F10>"
+%message	22	"Load Pic        <F9>"
+%message	23	"Add To Pic  <Ctrl-A>"
+%message	24	"Overlay Pic <Ctrl-O>"
+%message	25	"Quit         <Alt-Z>"
+
+%message	30		"Flags"
+%message	31	"Float Ego        <F1>"
+%message	32	"Ignore Block <Ctrl-B>"
+%message	33	"Keep Cycling <Ctrl-K>"
+%message	34	"No Cycling   <Ctrl-N>"
+%message	35	"Auto View Advance    "
+
+%message	40		"Show"
+%message	41	"Ego Info   <Alt-E>"
+%message	42	"Pri Screen <Alt-P>"
+%message	43	"Loop Count <Alt-L>"
+%message	44	"Cel Count  <Alt-C>"
+%message	45	"Show Text  <Alt-S>"
+
+%message	50		"Set"
+%message	51	"Fix Loop  <Ctrl-L>"
+%message	52	"Fix Cell  <Ctrl-C>"
+%message	53	"Cycle Time    <F8>"
+%message	54	"Step Size <Ctrl-S>"
+%message	55	"Step Time <Ctrl-T>"
+%message	56	"Set Priority  <F2>"
+%message	57	"Release Pri   <F3>"
+%message	58	"Reposition    <F4>"
+
+%message	60		"Misc"
+%message	61	"Speed           <F5>"
+%message	62	"Version      <Alt-V>"
+%message	63	"Joystick    <Ctrl-J>"
+%message	64	"RGB Monitor <Ctrl-R>"
+
+
+
+
+if (errorNumber)
+	{
+	Call( 255);
+	}
+
+if (currentRoom == 0)
+	{
+	Set( noScript);
+
+	SetMenu(	   10);					[	"TESTING
+	SetMenuItem( 11, cAbout);			[	"About
+	SetMenuItem( 12, cAboutAl);			[	"AboutAl
+	SetMenuItem( 13, cHelp1);			[	"Help1
+	SetMenuItem( 14, cHelp2);			[	"Help2
+	SetMenuItem( 15, cHelp);				[	"Help3
+
+	SetMenu(	   20);					[	"FILE
+	SetMenuItem( 21, cLoadView);			[	"LoadView
+	SetMenuItem( 22, cLoadPic);			[	"LoadPic
+	SetMenuItem( 23, cAddToPic);			[	"AddToPic
+	SetMenuItem( 24, cOverlayPic);		[	"OverlayPic
+	SetMenuItem( 25, cQuit);				[	"Quit
+
+	SetMenu(	   30);					[	"FLAGS
+	SetMenuItem( 31, cFloatEgo);			[	"FloatEgo
+	SetMenuItem( 32, cBlockToggle);		[	"BlockToggle
+	SetMenuItem( 33, cKeepCycling);		[	"KeepCycling
+	SetMenuItem( 34, cNoCycling);			[	"NoCycling
+	SetMenuItem( 35, cAutoViewLoad);		[	"Auto View Advance
+
+	SetMenu(	   40);					[	"SHOW
+	SetMenuItem( 41, cShowEgo);			[	"ShowEgo
+	SetMenuItem( 42, cShowPriority);		[	"ShowPriority
+	SetMenuItem( 43, cLoopCount);			[	"LoopCount
+	SetMenuItem( 44, cCelCount);			[	"CelCount
+	SetMenuItem( 45, cShowObj);			[	"Object Text
+
+	SetMenu(	   50);					[	"SET
+	SetMenuItem( 51, cSetLoop);			[	"SetLoop
+	SetMenuItem( 52, cSetCell);			[	"SetCell
+	SetMenuItem( 53, cCycleChange);		[	"CycleChange
+	SetMenuItem( 54, cStepSize);			[	"StepSize
+	SetMenuItem( 55, cStepTime);			[	"StepTime
+	SetMenuItem( 56, cSetEgoP);			[	"SetEgoP
+	SetMenuItem( 57, cReleaseEgoP);		[	"ReleaseEgoP
+	SetMenuItem( 58, cRepositionEgo);		[	"RepositionEgo
+
+	SetMenu(	   60);					[	"OTHER
+	SetMenuItem( 61, cSpeedChange);		[	"SpeedChange
+	SetMenuItem( 62, cVersion);			[	"Version
+	SetMenuItem( 63, cInitJoy);			[	"InitJoy
+	if  (machineType == PC &&
+		monitorType != MONO &&
+		monitorType != EGA)
+		{
+		SetMenuItem( 64, cToggleMonitor);	[	"ToggleMonitor
+		}
+
+	SubmitMenu();
+	Set( enableMenu);
+
+
+	PreventInput();
+	ConfigureScreen( 1, 0, 21);
+	StatusLineOff();
+	SetTextAttribute( 15, 0);
+	NewRoom( 222);
+	}
+
+CallV( currentRoom);
+

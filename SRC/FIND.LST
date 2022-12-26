@@ -1,0 +1,19 @@
+---------- rm2.cg
+151:			SetScanStart();
+169:			ResetScanStart();			[	We've got a valid letter.
+
+---------- rm3.cg
+151:			SetScanStart();
+169:			ResetScanStart();		[	We've got a valid letter.
+
+---------- rm38.cg
+760:				SetScanStart();
+792:				ResetScanStart();		[	We have a legal answer.
+
+---------- rm4.cg
+151:			SetScanStart();
+169:			ResetScanStart();		[	We've got a valid letter.
+
+---------- rm54.cg
+29:	%message	22	"SetScanStart() already active\nin logic %v18.%m25";
+

@@ -1,0 +1,157 @@
+  1  Illegal character.
+  3  Illegal keyword.
+  4  Use the format CODE=dddd or TRAIL=dddd.
+  5  This size must not exceed 64K.
+ 10  Illegal character.
+ 11  Character constants should be terminated by a '
+ 12  The comment is not terminated by */
+ 14  The name is too long. (max. 250 characters)
+ 15  The textstring is too long. (max. 250 characters)
+ 16  The textstring should be terminated with a " in the same line.
+ 17  Real constant is out of range.
+ 18  A hex digit is expected after a dollar sign.
+100  Undeclared domain (or mis-spelling).
+102  Standard domains must not be declared.
+103  This domain was declared previously.
+104  Syntax error:    =   or  ,  expected.
+105  Name expected (either a domain or a functor).
+106  Alternatives in a list declaration are illegal.
+107  This functor has already been used in the domain declaration.
+108  Functor name expected.
+109  Domain name expected.
+110  Syntax error in domain declaration.  )  or  ,  expected.
+111  WARNING: Domain used as a functor. (F10=Ok, Esc=Abort).
+112  WARNING: Domain declaration with a single functor. (F10=Ok, Esc=Abort).
+200  Illegal start of domain declaration.
+201  This name is reserved for a standard predicate. 
+202  This predicate is already declared.
+204  Domain name  or  )  expected.
+205  Undeclared domain or mis-spelling.
+206  Too many parameters used in this predicate.
+208  Syntax error in predicate declaration.  )  or  , expected.
+209  Illegal number of parameters.
+210  Only one database predicate declaration is allowed.
+211  This predicate is declared as a database predicate.
+220  Syntax error in declaration of global predicates: "-" expected.
+221  Syntax error. "(" expected.
+222  Syntax error in flowpattern. "i" or "o" expected
+223  Flowpattern has the wrong length.
+226  Syntax error. "predicates" or "domains" expected.
+227  Project name expected.
+228  At most one internal goal may be specified.
+229  The include file does not exist.
+230  Include files may not be used recursively. This file is already included.
+231  Too many include files. The maximum is 10.
+232  The include file is too big.
+233  "database" declarations must precede "predicates".
+234  Global predicates must be declared first.
+235  The FILE domain can not be a local domain.
+400  Syntax error. (Illegal start of predicate declaration).
+401  No clauses for this predicate.
+402  Syntax error.  AND    ,   or   .  expected.
+403  Predicate name expected.
+404  Undeclared predicate or mis-spelling.
+405  (  expected.
+406  )  or  ,  expected.
+407  Illegal number of parameters: refer to declaration.
+408  This sign should be followed by a number.
+409  Syntax error -  this token is misplaced.
+410  Variable expected.
+411   ,  expected.
+412  Syntax error.
+413  Syntax error.  ,   |  or ]  expected.
+414  Number or variable expected.
+415  Clauses for the same predicate should be grouped.
+416  Comparison operator expected i.e. one of  <   <=   >=   ><   <>. 
+417  Text after . is prohibited here.
+418  Unexpected end of text.
+419  Syntax error in clause body.
+420  WARNING: The variable is only used once. ( F10=Ok, Esc=abort ).
+421  The parameter is missing.
+422  .   :-   or   IF   expected.
+423  ,   or    )    expected.
+424  This facility is not implemented in this version.
+425  A list should be terminated by a  ]
+426  Initializing a "database" is not allowed in a submodule.
+427  To generate an object module the program must contain a goal.
+428  The free variable in findall can only be used inside findall.
+429  The free variable in findall does not occur in the predicate.
+450  Syntax error.
+600  Too many domain names.
+601  Too many alternatives in the domain declaration.
+602  Too many predicate names.
+603  Too many parameters in this clause.
+604  Too many literals in this clause.
+605  Too many clauses.
+606  Too many arguments.
+607  Too many domain names on the left hand side of a domain declaration.
+608  Too many database predicates.
+610  Code array too small: use code=size to get more space.
+611  Trail array too small: use trail=size to get more space.
+612  Overflow: too many structures in clause.
+614  Object module too big. (split into smaller modules ).
+701  An internal system error has occurred. Please contact your dealer.
+1000  The parameters in makewindow are illegal.
+1001  The cursor values are illegal.
+1002  Stack overflow. Re-configure with Setup if necessary.
+1003  Heap overflow. Not enough memory or an endless loop.
+1004  Arithmetic overflow.
+1005  The window referred to is unknown.
+1006  There is not enough room in the editor for the text.
+1007  Heap overflow. Not enough memory or an endless loop.
+1008  Code overflow. Use code=size to get more space.
+1009  Trail overflow. Use trail=size to get more space.
+1010  Attempt to open a previously opened file.
+1011  Attempt to re-assign input device to a unopened file.
+1012  Attempt to re-assign output device to a unopened file.
+1013  'system' call tries to execute a program which is too big or resident.
+1014  Division by zero.
+1015  Illegal window number.
+1016  Maximun number of windows exceeded.
+1018  The file isn't open.
+1019  Illegal file mode. (Should be the range 0-1).
+1020  Free variables are not allowed here.
+1021  Negative values or Zero are not allowed as parameter to LOG and LN.
+1022  Negative values are not allowed as parameter to SQRT.
+1023  Overflow in real operation.
+2000  Not enough storage space for the text.
+2001  Can't execute a write operation.
+2002  Impossible to open : 
+2003  Impossible to erase : 
+2004  Illegal disk : 
+2005  >>> Text buffer full <<<
+2006  Can't execute a read operation.
+2200  Type error.
+2201  Free variable in expression.
+2204  The variable will never become bound at this occurance.
+2205  Type error: Illegal variable type for this position.
+2206  Type error: The functor does not belong to the domain.
+2207  Type error: The compound object has the wrong number of arguments.
+2208  Expressions may not contain objects of this type.
+2209  Comparisons may only be made between standard types.
+2210  Objects from these domains cannot be compared.
+2211  There is no corresponding list domain.
+2212  Type error: This parameter can't handle compound objects.
+2213  Type error: This argument can't be a real.
+3001  Loop in the flow analysis. Don't use a compound flowpattern here.
+3002  WARNING: Composite flowpattern. (F10=ok, Esc=abort)
+3003  This flowpattern doesn't exist for the standard predicate.
+3004  Free variable in NOT.
+3005  Free variables are not allowed here.
+3006  The last variable in FINDALL must be free.
+3007  Free variable in expression.
+3008  WARNING: The variable is not bound in this clause. (F10=ok, Esc=abort)
+3009  WARNING: Two free variables in expression. (F10=ok, Esc=abort)
+3010  WARNING: Variable used twice with output flowpattern.(F10=ok, Esc=abort)
+3011  WARNING: this will create a free variable.  ( F10=Ok, Esc=abort ).
+3012  The variable is not bound in this clause. ( Declare reference domain )
+3013  Two free variables in expression. ( Declare reference domain )
+3014  Variable used twice with output flowpattern. ( Declare reference domain )
+3015  This will create a free variable. ( Declare reference domain )
+3016  Occur check: A variabel can not contain itself.
+4001  WARNING: non deterministic clause. ( F10=Ok, Esc=abort ).
+4002  WARNING: non deterministic predicate. ( F10=Ok, Esc=abort ).
+5001  Error in reading symbol table.
+5003  Error in writing symbol table.
+5103  Use the graphics predicate to initialize the screen.
+5107  Illegal screen mode. (Should be in range 1-5).

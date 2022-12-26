@@ -1,0 +1,186 @@
+[messages for room -- rm
+[	"Leisure Suit Larry in the Land of the Lounge Lizards"
+[	by Al Lowe
+
+
+
+%message	60
+""
+
+%message	61
+""
+
+%message	62
+""
+
+%message	63
+""
+
+%message	64
+""
+
+%message	65
+""
+
+%message	66
+""
+
+%message	67
+""
+
+%message	68
+""
+
+%message	69
+""
+
+%message	70
+""
+
+%message	71
+""
+
+%message	72
+""
+
+%message	73
+""
+
+%message	74
+""
+
+%message	75
+""
+
+%message	76
+""
+
+%message	77
+""
+
+%message	78
+""
+
+%message	79
+""
+
+%message	80
+""
+
+%message	81
+""
+
+%message	82
+""
+
+%message	83
+""
+
+%message	84
+""
+
+%message	85
+""
+
+%message	86
+""
+
+%message	87
+""
+
+%message	88
+""
+
+%message	89
+""
+
+%message	90
+""
+
+%message	91
+""
+
+%message	92
+""
+
+%message	93
+""
+
+%message	94
+""
+
+%message	95
+""
+
+%message	96
+""
+
+%message	97
+""
+
+%message	98
+""
+
+%message	99
+""
+
+%message	100
+""
+
+%message	101
+""
+
+%message	102
+""
+
+%message	103
+""
+
+%message	104
+""
+
+%message	105
+""
+
+%message	106
+""
+
+%message	107
+""
+
+%message	108
+""
+
+%message	109
+""
+
+%message	110
+""
+
+%message	111
+""
+
+%message	112
+""
+
+%message	113
+""
+
+%message	114
+""
+
+%message	115
+""
+
+%message	116
+""
+
+%message	117
+""
+
+%message	118
+""
+
+%message	119
+""
+

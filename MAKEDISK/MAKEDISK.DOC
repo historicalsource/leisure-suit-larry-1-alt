@@ -1,0 +1,73 @@
+
+
+
+				 HOW TO MAKE AN AGI PROD DISK
+				 ============================
+
+
+
+
+SECTION I. PRELIMINARY STUFF.  
+
+DO THIS IF NO ONE HAS EVER MADE THIS GAME BEFORE:
+(Al has done this so please skip to section II.)
+
+
+	1.	make "vol?.drv" for each disk, plus "vol0.drv", listing the rooms 
+		on each volume.
+	
+	2.	run "finduse rm.*>..\makedisk\uses"
+	
+	3.	edit vol?.drv and run the macro "complete".
+	
+	4.	manually resolve all loads from var's in vol?.drv.
+	
+	5.	run "chkdupes" on "vol0" vs. all "vol?".
+		run "chkdupes" on "vol?" vs. all "vol?".
+	
+	6.	edit "dupes", moving the dupes from vol? and vol? to vol0.
+	
+	7.	run "resolve".
+	
+	8.	edit "missing", and resolve the differences in vol?.
+	
+	9.	run "makevol"
+	
+	10.	check volume sizes.  Go back to #1 until right.
+	
+
+
+
+SECTION II.  MAINTENANCE
+
+ONCE ALL THE ABOVE STUFF IS FINISHED.
+(start here!)
+
+	1. 	find out from wherever you can (QA, various Bobs, actually play
+		testing the game) what stuff is missing from where.
+
+	2. 	edit the vol?.drv file for that particular volume, and add the 
+		missing items in the appropriate places.
+
+	3.	run the "makeall" batch file.  It requires 3 formatted disks,
+		that will be erased clean in the process.
+		
+			NOTE:  You MUST go into the \kq\makedisk directory 
+			manually to use any of these files, since they are 
+			all pretty drastic.  They are purposefully NOT in 
+			your DOS "path".  
+
+
+
+MAKEDISK
+The "makedisk" batch file should be run if there have been no changes to 
+the "vol" files since your last "makeall."  "What good is this?" you may ask.  Good question.
+If you are making several copies of your game disks for distribution, it IS 
+faster than using "diskcopy" -- that's about it.
+
+
+MAKESHIP
+This "makeship" batch file should be run after "makeall" if production
+copies for the FormMaster are needed.  It requires the special
+"made-by-Jeff" floppy, copies it to KQ3 Disk 1, then copies the necessary
+files to all 3 KQ3 disks.

@@ -1,0 +1,701 @@
+[logics for room 222 -- testing room
+
+%include "sysdefs.h"
+
+
+
+%define	cHelp				1
+%define	cAutoViewLoad			2
+%define	cShowEgo				3
+%define	cShowPriority			4
+%define	cVersion				5
+%define	cInitJoy				6
+%define	cToggleMonitor			7
+%define	cQuit				8
+%define	cAbout				9
+%define	cHelp1				10
+%define	cHelp2				11
+%define	cShowObj				12
+%define	cRepositionEgo			13
+%define	cSetEgoP				14
+%define	cReleaseEgoP			15
+%define	cLoopCount			16
+%define	cBlockToggle			17
+%define	cSpeedChange			18
+%define	cLoadPic				19
+%define	cLoadView				20
+%define	cKeepCycling			21
+%define	cNoCycling			22
+%define	cSetLoop				23
+%define	cSetCell				24
+%define	cFloatEgo				25
+%define	cAddToPic				26
+%define	cOverlayPic			27
+%define	cCelCount				28
+%define	cCycleChange			29
+%define	cStepSize				30
+%define	cStepTime				31
+%define	cMenu				32
+%define	cAboutAl				33
+
+
+
+%flag	printLine1			50
+%flag	skipBlock				51
+%flag	specialTgl			52
+%flag	waterTgl				53
+%flag	floatEgo				54
+%flag	loopFixed				55
+%flag	keepCycling			56
+%flag	noCycling				57
+%flag	autoViewLoadOn			58
+
+
+%var		test1				45
+%var		test2				46
+%var		cycleTime				49
+%var		egoX					50
+%var		egoY					51
+%var		oldEgoX				52
+%var		oldEgoY				53
+%var		oldEgoDir				54
+%var		picture				55
+%var		priority				56
+%var		work					57
+%var		view					58
+%var		loop					60
+%var		cell					61
+%var		stepSize				62
+%var		stepTime				63
+
+
+
+%object	ego					0
+%view	vEgo					0
+
+
+
+%message	1	"Picture to load: "
+%message	2	"X coordinate: "
+%message	3	"Y coordinate: "
+%message	4	"New step size: "
+%message	5	"New step time: "
+%message	6	"New value: "
+%message	7	"Loop number, %v45 or less: "
+%message	8	"Cell number, %v45 or less: "
+%message	9						   
+"P=%v55|3  V=%v58|3  S=%v10|1   CT=%v49|1  SS=%v62|1  ST=%v63|1"
+[Picture	 View	 Speed	  Cycletime  StepSize   StepTime
+
+%message	10
+"XY=%v50|3/%v51|3 P=%v56|2 L=%v45|1 C=%v46|2"
+[ego X/Y, 	  Priority, curLoop, curCell
+[XY=123/123  P=12  L=1  C=12
+
+%message	11
+"F10 now advances automatically to the next view.\n\n
+ Choose this again to resume normal view loading."
+
+%message	12
+"F10 now functions normally."
+
+%message	13	"View to load: "
+%message	14	"New Priority: "
+%message	15	"Box priority: "
+
+
+[		HELP MESSAGES:
+
+%message	16	"\n\n
+\"Locust 1, 2, 3\"\n\n
+  by Al Lowe\n\n
+March 23, 1987\n\n"
+
+%message	17	"
+ F1 float ego (p = 15)\n
+ F2 set ego's priority\n
+ F3 release ego's priority\n
+ F4 reposition ego\n
+ F5 change speed\n
+ F6 show priority screen\n
+ F7 toggle ignore block\n
+ F8 change cycle time\n
+ F9 load new room picture\n
+F10 load new ego view"
+
+%message	18	"
+Ctrl-A Add to picture\n
+Ctrl-B toggle ignore Block\n
+Ctrl-C fix ego's Cel\n
+Ctrl-E show Ego information\n
+Ctrl-F Float ego (p = 15)\n
+Ctrl-J center Joystick\n
+Ctrl-K Keep cycling ego\n
+Ctrl-L fix ego's Loop\n
+Ctrl-N No cycling ego\n
+Ctrl-O Overlay picture\n
+Ctrl-P show Priority screen\n
+Ctrl-R RGB monitor toggle\n
+Ctrl-S change step Size\n
+Ctrl-T change step Time"
+
+%message	19	"
+Alt-C number of Cels in loop\n
+Alt-E show Ego information\n
+Alt-L number of Loops in view\n
+Alt-P show Priority screen\n
+Alt-S Show text view\n
+Alt-V Version\n
+Alt-Z quit and return to DOS"
+ 
+
+
+
+
+%message	20	"ESC for menu.           Alt-Z to exit."
+
+[		STATUS LINE:
+
+%message	21	" "
+%message	22	"  "
+%message	23	"A"
+%message	24	"B"
+%message	25	"F"
+%message	26	"K"
+%message	27	"N"
+%message	28	"W "
+%message	29	" W"
+%message	30	"S "
+%message	31	" S"
+%message	32	"L"
+%message	33	""
+%message	34	"View has %v45 loops."
+%message	35	"View has %v46 cells."
+
+%message	36	"
+   Chapter Two: The Middle Years\n\n
+Although Al never had THAT much\n
+trouble getting dates, he was still\n
+occasionally bothered by acne during\n
+his high school years, due to\n
+reasons (almost) beyond his control.\n\n
+Dermatologists from throughout the\n
+Midwest were consulted, but to no\n
+avail. (Evidently, most found the\n
+problem beyond their capabilities\n
+since the common diagonsis was \"it's\n
+in your hands, Son.\")\n\n
+Finally, at the St. Louis clinic of\n
+Masters and Johnson, he found relief\n
+through topical application of..."
+
+%message	37	"But wait, enough about him, let's hear a little
+ something about you..."
+
+	
+
+
+
+if (initLog)
+	{
+	animationInterval = 0;
+	SetHorizon( 1);
+
+	SetKey(  0, 59, cFloatEgo);		[F1
+	SetKey(  0, 60, cSetEgoP);		[F2
+	SetKey(  0, 61, cReleaseEgoP);	[F3
+	SetKey(  0, 62, cRepositionEgo);	[F4
+	SetKey(  0, 63, cSpeedChange);	[F5
+	SetKey(  0, 64, cShowPriority);	[F6
+	SetKey(  0, 65, cBlockToggle);	[F7
+	SetKey(  0, 66, cCycleChange);	[F8
+	SetKey(  0, 67, cLoadPic);		[F9
+	SetKey(  0, 68, cLoadView);		[F10
+
+	SetKey(  1, 0, cAddToPic);		[^A
+	SetKey(  2, 0, cBlockToggle);		[^B
+	SetKey(  3, 0, cSetCell);		[^C
+	SetKey(  5, 0, cShowEgo);		[^E
+	SetKey(  6, 0, cFloatEgo);		[^F
+	SetKey( 10, 0, cInitJoy);		[^J
+	SetKey( 11, 0, cKeepCycling);		[^K
+	SetKey( 12, 0, cSetLoop);		[^L
+	SetKey( 14, 0, cNoCycling);		[^N
+	SetKey( 15, 0, cOverlayPic);		[^O
+	SetKey( 16, 0, cShowPriority);	[^P
+	SetKey( 18, 0, cToggleMonitor);	[^R
+	SetKey( 19, 0, cStepSize);		[^S
+	SetKey( 20, 0, cStepTime);		[^T
+
+	SetKey(  0, 46, cCelCount);		[@C
+	SetKey(  0, 18, cShowEgo);		[@E
+	SetKey(  0, 38, cLoopCount);		[@L
+	SetKey(  0, 25, cShowPriority);	[@P
+	SetKey(  0, 31, cShowObj);		[@S
+	SetKey(  0, 47, cVersion);		[@V
+	SetKey(  0, 44, cQuit);			[@Z
+
+	SetKey(  27, 0, cMenu);			[ESC
+
+	SetKey( JOYSTICK_LOW_BYTE, BUTTON_0, cMenu);
+	SetKey( JOYSTICK_LOW_BYTE, BUTTON_1, cMenu);
+
+
+
+	AnimateObj( ego);
+	LoadView( vEgo);
+	SetView( ego, vEgo);
+	cycleTime = 1;
+	stepSize = 1;
+	stepTime = 1;
+	Position( ego, 77, 160);
+	Draw( ego);
+
+	GetNum( 1, picture);
+	ClearLines( 0, 0, 0);
+	LoadPic( picture);
+	DrawPic( picture);
+	DiscardPic( picture);
+	ShowPic( );
+
+	CurrentView( ego, view);
+	Display( 23, 0, 9);
+	SetTextAttribute( 6, 0);
+	Display( 22, 0, 20);
+	SetTextAttribute( 15, 0);
+	}
+
+
+
+
+GetPosn( ego, egoX, egoY);
+Reset( printLine1);
+
+
+
+if (Controller( cMenu))
+	{
+	MenuInput();
+	}
+
+
+if (Controller( cShowObj))
+	{
+	GetNum( 13, test1);
+	ShowObjV( test1);
+	}
+
+
+if (Controller( cAutoViewLoad))
+	{
+	Toggle( autoViewLoadOn);
+	if (autoViewLoadOn)
+		{
+		Print( 11);
+		}
+	else
+		{
+		Print( 12);
+		}
+	}
+
+if (Controller( cAbout))
+	{
+	Print( 16);
+	}
+
+if (Controller( cAboutAl))
+	{
+	PrintAt( 36, 1, 2, 37);
+		[msg #, row, col, width
+	Print( 37);
+	}
+
+if (Controller( cToggleMonitor))
+	{
+	ToggleMonitor();
+	}
+
+if (Controller( cInitJoy))
+	{
+	InitJoy();
+	}
+
+if (Controller( cVersion))
+	{
+	Print( 16);
+	Version();
+	}
+
+if (Controller( cStepSize))
+	{
+	GetNum( 4, stepSize);
+	StepSize( ego, stepSize);
+	Set( printLine1);
+	}
+
+if (Controller( cStepTime))
+	{
+	GetNum( 5, stepTime);
+	StepTime( ego, stepTime);
+	Set( printLine1);
+	}
+
+if (Controller( cLoopCount))
+	{
+	NumberOfLoops( ego, test1);
+	test2 = test1;
+	--test2;
+	Print( 34);
+	}
+
+if (Controller( cCelCount))
+	{
+	LastCel( ego, test1);
+	test2 = test1;
+	++test2;
+	Print( 35);
+	}
+
+if (Controller( cSetLoop))
+	{
+	Toggle( loopFixed);
+	if (!loopFixed)
+		{
+		ReleaseLoop( ego);
+		}
+	else
+		{
+		NumberOfLoops( ego, test1);
+		--test1;
+		GetNum( 7, test2);
+		if (test2 > test1)
+			{
+			test2 = test1;
+			}
+		SetLoopV( ego, test2);
+		FixLoop( ego);
+		}
+	}
+
+if (Controller( cSetCell))
+	{
+	Set( noCycling);
+	Reset( keepCycling);
+	LastCel( ego, test1);
+	GetNum( 8, test2);
+	if (test2 > test1)
+		{
+		test2 = test1;
+		}
+	SetCelV( ego, test2);
+	}
+
+if (Controller( cAddToPic))
+	{
+	Erase( ego);
+	CurrentView( ego, view);
+	CurrentLoop( ego, loop);
+	CurrentCel( ego, cell);
+	GetNum( 14, priority);
+	GetNum( 15, work);
+			[view, loop, cel,  x,   y, obj priority, box priority
+	AddToPictureV( view, loop, cell, egoX, egoY, priority, work);
+	Draw( ego);
+	}
+
+if (Controller( cOverlayPic))
+	{
+	Erase( ego);
+	GetNum( 1, test1);
+	LoadPic( test1);
+	OverlayPic( test1);
+	DiscardPic( test1);
+	ShowPic( );
+	Draw( ego);
+	}
+
+
+if (Controller( cHelp1))
+	{
+	Print( 17);
+	}
+
+if (Controller( cHelp2))
+	{
+	Print( 18);
+	}
+
+if (Controller( cHelp))
+	{
+	Print( 19);
+	}
+
+
+if (Controller( cShowEgo))
+	{
+	test1 = 0;
+	ObjStatusV( test1);
+	}
+
+if (Controller( cRepositionEgo))
+	{
+	GetNum( 2, test1);
+	GetNum( 3, test2);
+	RepositionToV( ego, test1, test2);
+	}
+
+if (Controller( cSetEgoP))
+	{
+	GetNum( 14, test2);
+	SetPriorityV( ego, test2);
+	if (test2 == 15)
+		{
+		Set( floatEgo);
+		}
+	}
+
+if (Controller( cReleaseEgoP))
+	{
+	ReleasePriority( ego);
+	Reset( floatEgo);
+	}
+
+if (Controller( cShowPriority))
+	{
+	ShowPriScreen( );
+	}
+
+if (Controller( cBlockToggle))
+	{
+	Toggle( skipBlock);
+	if (skipBlock)
+		{
+		IgnoreBlocks( ego);
+		}
+	else
+		{
+		ObserveBlocks( ego);
+		}
+	}
+
+if (Controller( cSpeedChange))
+	{
+	++animationInterval;
+	if (animationInterval > 6)
+		{
+		animationInterval = 0;
+		}
+	Set( printLine1);
+	}
+
+if (Controller( cCycleChange))
+	{
+	++cycleTime;
+	if (cycleTime > 6)
+		{
+		cycleTime = 0;
+		}
+	CycleTime( ego, cycleTime);
+	Set( printLine1);
+	}
+
+if (Controller( cLoadPic))
+	{
+	Erase( ego);
+	GetNum( 1, picture);
+	LoadPic( picture);
+	DrawPic( picture);
+	DiscardPic( picture);
+	ShowPic( );
+	Draw( ego);
+	Set( printLine1);
+	}
+
+if (Controller( cLoadView))
+	{
+	Erase( ego);
+	DiscardViewV( view);
+	if (!autoViewLoadOn)
+		{
+		GetNum( 13, view);
+		}
+	else
+		{
+		++view;
+		}
+	LoadViewV( view);
+	SetViewV( ego, view);
+	Draw( ego);
+	Set( printLine1);
+	}
+
+if (Controller( cFloatEgo))
+	{
+	Toggle( floatEgo);
+	if (floatEgo)
+		{
+		SetPriority( ego, 15);
+		}
+	else
+		{
+		ReleasePriority( ego);
+		}
+	}
+
+if (Controller( cKeepCycling))
+	{
+	Toggle( keepCycling);
+	}
+
+if (Controller( cNoCycling))
+	{
+	Toggle( noCycling);
+	}
+
+if (Controller( cQuit))
+	{
+	Quit( 1);
+	}
+
+
+[*****
+[	EGO'S CYCLING
+[*****
+
+if (egoDir == oldEgoDir &&			[if against a wall, don't tread water
+	egoX == oldEgoX &&
+	egoY == oldEgoY)
+	{
+	StopCycling( ego);
+	}
+else	
+	{
+	StartCycling( ego);
+	}
+
+if (!egoDir)
+	{
+	StopCycling( ego);
+	}
+
+if (noCycling)						[	make him float
+	{
+	StopCycling( ego);
+	}
+
+if (keepCycling) 					[	make him cycle
+	{
+	StartCycling( ego);
+	}
+
+
+if (haveInput && !haveMatch)
+	{
+	Print( 20);
+	}
+
+
+[*****
+:status.line.maintenance
+[*****
+
+if (haveInput)
+	{
+	ClearLines( 0, 0, 0);
+	}
+
+if (printLine1)
+	{
+	Display( 23, 0, 9);
+	}
+
+GetPosn( ego, egoX, egoY);
+GetPriority( ego, priority);
+CurrentLoop( ego, test1);
+CurrentCel( ego, test2);
+Display( 24, 0, 10);				[	x, y, p, l, c  A L F B K N W S
+
+if (autoViewLoadOn)			{Display( 24, 25, 23);}
+else						{Display( 24, 25, 21);}
+if (loopFixed)				{Display( 24, 27, 32);}
+else						{Display( 24, 27, 21);}
+if (skipBlock)				{Display( 24, 29, 24);}
+else						{Display( 24, 29, 21);}
+if (floatEgo)				{Display( 24, 31, 25);}
+else						{Display( 24, 31, 21);}
+if (keepCycling)			{Display( 24, 33, 26);}
+else						{Display( 24, 33, 21);}
+if (noCycling)				{Display( 24, 35, 27);}
+else						{Display( 24, 35, 21);}
+
+if (!onWater && !hitSpecial)
+	{
+	Display( 24, 37, 22);
+	}
+else
+	{
+	if (onWater)
+		{
+		Toggle( waterTgl);
+		if (!waterTgl)			{Display( 24, 37, 28);}
+		else					{Display( 24, 37, 29);}
+		}
+
+	if (hitSpecial)
+		{
+		Toggle( specialTgl);
+		if (!specialTgl)		{Display( 24, 37, 30);}
+		else					{Display( 24, 37, 31);}
+		}
+	}
+
+oldEgoDir = egoDir;
+oldEgoX   = egoX;
+oldEgoY   = egoY;
+
+
+if ((controller( 1) ||
+	controller( 2) ||
+	controller( 3) ||
+	controller( 4) ||
+	controller( 5) ||
+	controller( 6) ||
+	controller( 7) ||
+	controller( 8) ||
+	controller( 9) ||
+	controller(10) ||
+	controller(11) ||
+	controller(12) ||
+	controller(13) ||
+	controller(14) ||
+	controller(15) ||
+	controller(16) ||
+	controller(17) ||
+	controller(18) ||
+	controller(19) ||
+	controller(20) ||
+	controller(21) ||
+	controller(22) ||
+	controller(23) ||
+	controller(24) ||
+	controller(25) ||
+	controller(26) ||
+	controller(27) ||
+	controller(28) ||
+	controller(29) ||
+	controller(30) ||
+	controller(31) ||
+	controller(32) ||
+	controller(33) ||
+	controller(34) ||
+	controller(35) ||
+	controller(36) ||
+	controller(37) ||
+	controller(38) ||
+	controller(39)))
+	{
+	ClearLines(0, 0, 0);
+	}
+
+

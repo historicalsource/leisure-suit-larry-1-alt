@@ -1,0 +1,392 @@
+%message	100	
+"Which entertai er can usually be found in Las Vegas?/n\n
+  1. Wayne Newton/n
+  2. Michael J. Fox/n
+  3. Michael Jackson/n
+  4. Elizabeth Taylor"
+
+%message	101	
+"In the board game Monopoly:/n\n
+  1. You must try for a straight or a flush/n
+  2. You need to own several houses before you can build a hotel/n
+  3. You need a Queen to win/n
+  4. You win if you roll a seven and a five"
+
+%message	102	
+"Which island is not in Hawaii/n\n
+  1. Oahu/n
+  2. Kauai/n
+  3. Fiji/n
+  4. Maui"
+
+%message	103	
+"Which is not a kind of car:/n\n
+  1. Ferrari/n
+  2. Porsche/n
+  3. Corvair/n
+  4. Toshiba"
+
+%message	104	
+"What was Dwight Eisenhowers nickname:/n\n
+  1. Mabel/n
+  2. Ironsides/n
+  3. Ike/n
+  4. Tinkerbell"
+
+%message	105	
+"Bourbon Street is in:/n\n
+  1. Whiskeyville Indiana/n
+  2. California/n
+  3. the board game Monopoly/n
+  4. New Orleans"
+
+%message	106	
+"Does a pair of Aces beat three Deuces:/n\n
+  1. Yes, in Blackjack/n
+  2. No, unless the Deuces are clubs/n
+  3. depends on what the three Deuces said/n
+  4. Yes, at Poker"
+
+%message	107	
+"Calvin Klein is:/n\n
+  1. married to Brook Shields/n
+  2. a movie star/n
+  3. a clothing designer/n
+  4. President of the Coarsegold Chamber of Commerce"
+
+%message	108	
+"2 bits is:/n\n
+  1. all it takes to consume a Big Mac/n
+  2. programmer talk/n
+  3. about a dollar/n
+  4. what it costs for a shave and a haircut"
+
+%message	109	
+"Lesbians are:/n\n
+  1. inhabitants of Lesbia/n
+  2. anti-catholic/n
+  3. gay/n
+  4. short men"
+
+%message	110	
+"Name the person not famous for music:/n\n
+  1. Lawerence Welk/n
+  2. Tommy Dorsey/n
+  3. Les Brown/n
+  4. Steve Garvey"
+
+%message	110	
+"Which is not a city in Mexico/n\n
+  1. Tiajuana/n
+  2. Puerto Vallarta/n
+  3. San Diego/n
+  4. Mexico City"
+
+%message	111	
+"Which is not a kind of alcohol/n\n
+  1. Whiskey/n
+  2. Grand Marnier/n
+  3. Perrier/n
+  4. Tequila"
+
+%message	112	
+"Who is not a prominent politician:/n\n
+  1. Richard Nixon/n
+  2. Ronald Reagon/n
+  3. W.C. Fields/n
+  4. George Bush"
+
+%message	113	
+"Which pick-up line would be most likely to get you slapped?/n\n
+  1. What's your sign?/n
+  2. Don't I know you from somewhere?/n
+  3. Is your name Sally?/n
+  4. Wanna see my joystick?"
+
+%message	114	
+"Are you a male or a female?/n\n
+  1. Yes/n
+  2. I'm not sure/n
+  3. Both/n
+  4. None of the above"
+
+%message 115  
+"Which one of these was NOT a U. S. war?/n\n
+  1. World War 2/n
+  2. Korea/n
+  3. Chinese/n
+  4. Vietnam"
+
+%message 116  
+"Who is buried in Grant's tomb?/n\n
+  1. Johnson/n
+  2. Jomes/n
+  3. Smith/n
+  4. None of the above" 
+
+%message	117	
+"What kind of boat did John F. Kennedy drive in the war?/n\n
+  1. a PT boat/n
+  2. a windsurfer/n
+  3. a gunboat/n
+  4. a sailboat"
+
+%message	118	
+"Where is your anal orifice?/n\n
+  1. under your arms/n
+  2. up your nose/n
+  3. behind you/n
+  4. at the office"
+
+%message	119	
+"What happened as a result of Watergate?/n\n
+  1. The gate broke and the water ran out/n
+  2. The gate created a nice swimming lake/n
+  3. President Nixon quit/n
+  4. Gerald Ford quit"
+
+%message	120	
+"Which may become the 51st state of the US?/n\n
+  1. Guam/n
+  2. Mexico/n
+  3. Brazil/n
+  4. Puerto Rico"
+
+%message	121	
+"What connects the Atlantic and Pacific Oceans/n\n
+  1. The Panama Canal/n
+  2. The Snake River/n
+  3. The Thames/n
+  4. a rubber band"
+
+%message	122	
+"Where would you go to find a virgin?/n\n
+  1. The virgin islands/n
+  2. New York/n
+  3. St. Marys school for girls/n
+  4. Hollywood"
+
+%message	123	
+"Who wrote \"To be or not to be\"?/n\n
+  1. Shakespere/n
+  2. Paul McCartny/n
+  3. the Oakridge Boys/n
+  4. Alabama"
+
+%message	124	
+"What were the Rocky mountains named after?/n\n
+  1. Sylvestor Stallone/n
+  2. Rocky the Squirrel/n
+  3. Rocky Road Ice Cream/n
+  4. None of the Above"
+
+%message	125	
+"Utah is full of:/n\n
+  1. Fresh Water/n
+  2. Jews/n
+  3. Catholics/n
+  4. None of the above"
+
+%message	126	
+"Who was the leader of Nazi germany?/n\n
+  1. Lyndon Johnston/n
+  2. Mussolini/n
+  3. Oleg Cassinni/n
+  4. Adolph Hitler"
+
+%message	127	
+"Who did Lee Harvey Oswald kill?/n\n
+  1. Harvey Milk/n
+  2. Adolph Hitler/n
+  3. John F. Kennedy/n
+  4. All of the above"
+
+%message	128	
+"How many grains of sand are there on the average beach?/n\n
+  1. One million/n
+  2. One trillion/n
+  3. One million trillion/n
+  4. All of the above"
+
+%message	129	
+"If you were stuck alone on an island with Bo Derek you would?/n\n
+  1. Call for help/n
+  2. Try to get off the island/n
+  3. Pray for a television/n
+  4. Say thank you"
+
+%message	130	
+"If Bo Derek were here now, you'd ask her to:/n\n
+  1. help you with your homework/n
+  2. remove her clothes/n
+  3. leave/n
+  4. respect your privacy"
+
+%message	131	
+"How many tires does the average car have?/n\n
+  1. 5 (Theres one in the trunk)/n
+  2. 4/n
+  3. 3/n
+  4. None of the above"
+
+%message	132	
+"What is the biggest city in the U.S.?/n\n
+  1. Coarsegold/n
+  2. Fresno/n
+  3. New York/n
+  4. Peoria"
+
+%message	133	
+"What is a nehru jacket?/n\n
+  1. a jacket made from a dead nehru/n
+  2. an out of style jacket/n
+  3. an in style jacket/n
+  4. an old worn out jacket"
+
+%message	134	
+%Who is Sargent Peppers Lonely Hearts Club Band?/n\n
+  1. The Beatles/n
+  2. Creedence Clearwater/n
+  3. The Rolling Stones/n
+  4. None of the above"
+
+%message	135	
+"Which of the following is not a branch of the American \n
+armed forces:/n
+  1. the Army/n
+  2. the Navy/n
+  3. the Marines/n
+  4. the National League"
+
+%message	136	
+"The most effective form of birth control is:/n\n
+  1. Abstinance/n
+  2. Dating only Catholics/n
+  3. Pills/n
+  4. Dating only truly ugly people"
+
+%message	137	
+"If you drank a gallon of cheap wine every day for 3 months:/n\n
+  1. You would live longer/n
+  2. You would die immediately/n
+  3. You would be of questionable character/n
+  4. Your sex life would greatly improve"
+
+%message	138	
+"Joe Demaggio played:/n\n
+  1. Pocket Polo/n
+  2. Baseball/n
+  3. Basketball/n
+  4. Trumpet"
+
+%message	139	
+"Pick the biggest state:/n\n
+  1. California/n
+  2. South Carolina/n
+  3. Rhode Island/n
+  4. Oregon"
+
+%message	140	
+"Pick the line most likely to get a raise from your boss:/n\n
+  1. I need more money to buy drugs/n
+  2. My girlfriend is pregnant/n
+  3. Can I have a raise?
+  4. Does your wife know about your relationship with Margaret?"
+
+%message	141	
+"Name the gift you should not give your wife:/n\n
+  1. Diamonds/n
+  2. Herpes/n
+  3. A new car/n
+  4. A new tennis racket"
+
+%message	142	
+"What did the Black guy say?/n\n
+  1. Gimmee Five Mo'Fo/n
+  2. Whats your sign?/n
+  3. Que Pasa?/n
+  4. Mahalo"
+
+%message	143	
+"I find computer games with adult material:/n\n
+  1. Offensive/n					  	
+  2. Acceptable/n
+  3. Repulsive/n
+  4. Under my bed"
+
+%message	144	
+"Playboy is a magazine about:/n\n
+  1. Rabbits/n
+  2. Movies/n
+  3. Sex/n
+  4. Theatre"
+
+%message	145	
+"Peter Piper Picked a Peck of Pickeled .... ?/n\n
+  1. Peckers/n
+  2. Pipers/n
+  3. Peppers/n
+  4. Bannanas"
+
+%message	146	
+"An orgasm is?/n\n
+  1. The last scream of a dying prisoner/n
+  2. A thing of the past/n
+  3. Peasurable/n
+  4. Horrible"
+
+%message	147	
+"Annette's (from the original Micky Mouse Club) last name is:/n\n
+  1. Childs/n
+  2. That is her last name/n
+  3. Funicello/n
+  4. Avalon"
+
+%message	148	
+"Charley McCartney and ?/n\n
+  1. John Lennon/n
+  2. Al Lowe/n
+  3. Albert Einstein/n
+  4. Edgar Bergen"
+
+%message	149	
+"Bonnie and ?/n\n
+  1. Ronnie/n
+  2. Clyde/n
+  3. Donnie/n
+  4. the dog"
+
+%message	150	
+"The term Prohibition refers to:/n\n
+  1. Abstinance/n
+  2. an Anti-Drug Campaign/n
+  3. A period in history when alchohol was illegal/n
+  4. A period in history when perversion was illegal"
+
+%message 151	
+"The term ERA stands for:/n\n
+  1. Earnest Realtors Anonymous/n
+  2. Equal Rights Admendment/n
+  3. Errogenous Rights Association/n
+  4. Error Recovery Associates"
+
+%message	152	
+"G. Gordon Liddy was associated with:/n\n
+  1. The Mafia/n
+  2. Calvin Klein/n
+  3. Elizabeth Taylor/n
+  4. Watergate"
+
+%message	153	
+"Name the non-water sport:/n\n
+  1. skin diving/n
+  2. scuba diving/n
+  3. muff diving/n
+  4. diving board diving" 
+
+%message 155  
+"What are mammary glands used for?:/n\n
+  1. Hold on, so you don't fall off/n 
+  2. Milk production/n
+  3. Entertainment/n
+  4. All of the above"

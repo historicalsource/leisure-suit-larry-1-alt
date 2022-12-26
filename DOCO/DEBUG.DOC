@@ -1,0 +1,118 @@
+
+
+
+               LEISURE-SUIT LARRY IN THE LAND OF THE LOUNGE LIZARDS 
+
+                                DEBUG COMMANDS
+                                ==============
+
+                            as of:  May 19, 1987
+
+
+
+
+THE DEBUG MENU:
+---------------
+
+You can't type these in; they're all in the debug menu.
+Most have some ALT key equivalent.
+
+
+Ego Info            ALT-E     tells current ego info, as in the 
+                              "Obj Info" command below.          (formerly F4)
+
+Priority Screen     ALT-P     shows the priority screen.         (formerly F6)
+
+Memory              ALT-M     shows present memory usage.        (formerly F8)
+
+Obj info            ALT-I     prompts for animated object number, then
+                              gives its location, size, priority, etc.
+                              Note:  I normally number objects in a room from 
+                              1 up, and objects that occur in several rooms 
+                              from 15 down.  These numbers will be gladly 
+                              disclosed upon request.
+
+X/Y Display                   same as typing "xy" (see below)
+
+Get All Inventory             the lazy way to "find" every object in the game
+
+Inventory Numbers             helps you do a "get object" (see below) by
+                              telling the numbers of all the objects.
+
+
+
+
+TYPED DEBUG COMMANDS:
+---------------------
+
+These must be typed in, and the "debugging" flag must be set.  If you get a
+"How can you do that?" response, hit ALT-D to turn "debugging" on.
+
+
+"show position" OR 
+"room number" OR 
+"room" OR 
+"xy"                all do the same thing:  turn on & off the display at the
+                    bottom of the screen that shows ego's x/y and the
+                    current room number 
+
+
+alt-Z               quits quickly, and returns you to DOS
+
+"where" OR
+ALT-E               same as "Ego Info" on the debug menu; shows ego's
+                    location, height, width, and priority
+
+"tp"                skip immediately to a new room; 
+
+"position"          lets you immediately reposition ego to a different x/y 
+                    (useful to quickly see if old bugs have been fixed)
+
+"show priority" OR
+ALT-P               shows the priority screen
+
+"get object"        asks for the inventory object's number, then gives 
+                    it to you
+
+"gimme gimme"		same as "get all inventory" menu item
+
+"object in room"    asks you for an inventory object's number, then
+                    tells you the current room that object is in.
+
+"set priority"      lets you change ego's priority; it remains that until
+                    you "release priority" (see below), or enter a new room
+                    If ego's really messed up, try setting his priority to 15
+                    for a while.
+
+"release priority"  sets ego's priority back to what it usually should be
+
+
+"show flag"         asks for a flag number, then tells you whether that flag
+                    is set, or not set ("not set" is sometimes called "clear")
+
+"set flag"          asks for a flag number, then sets that flag
+
+"reset flag"        asks for a flag number, then resets (clears) that flag
+
+"show var"          asks for a var number, then tells you that var's value
+
+"set var"           asks for a var number, then asks for a new value, 
+                    then makes that var's value equal the new value
+
+
+
+
+OTHER IMPORTANT THINGS:
+-----------------------
+
+If you are hung up, or can't move, or can't type, hit ALT-D to turn 
+"debugging" off, then ALT-D again to turn it on.  This will turn off 
+programControl, preventInput, etc. and reestablish you as "the boss" again. 
+(This also gives the only "true" VERSION NUMBER of this particular game
+disk.)
+
+
+The brown "H" at the bottom of the screen tells you that the "handsOff" flag
+is set.  This may not mean much to you, but please mention in your bug report
+if that "H" IS displayed.
+
